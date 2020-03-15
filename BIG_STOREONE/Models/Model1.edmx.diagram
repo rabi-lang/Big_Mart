@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea120cec3d6c486cb7dedaf114f7ebf7" Name="Diagram1">
+        <EntityTypeShape EntityType="eveningDBModel.tblCategory" Width="1.5" PointX="2.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="eveningDBModel.tblProduct" Width="1.5" PointX="5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="eveningDBModel.tblRole" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="eveningDBModel.tbluserone" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="eveningDBModel.UserRole" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="eveningDBModel.FK_tblProduct_tblCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="eveningDBModel.FK_UserRole_tblRole" ManuallyRouted="false" />
+        <AssociationConnector Association="eveningDBModel.FK_UserRole_tbluserone" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

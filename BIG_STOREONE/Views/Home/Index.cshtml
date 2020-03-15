@@ -1,0 +1,176 @@
+﻿@using BIG_STOREONE.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUI.cshtml";
+}
+
+@section banner
+{
+    <div data-vide-bg="video/video">
+        <div class="container">
+            <div class="banner-info">
+                <h3>
+                    Welcome to Big Supermarket, Nepal's Largest Online Supermarket!
+                </h3>
+                <div class="search-form">
+                    <form action="#" method="post">
+                        <input type="text" placeholder="Search..." name="Search...">
+                        <input type="submit" value=" ">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<!--content-->
+<div class="content-top ">
+    <div class="container ">
+        <div class="spec ">
+            <h3>New Offers</h3>
+            <div class="ser-t">
+                <b></b>
+                <span><i></i></span>
+                <b class="line"></b>
+            </div>
+        </div>
+        <div class="tab-head ">
+
+            <div class=" tab-content tab-content-t ">
+                <div class="tab-pane active text-style" id="tab1">
+                    <div class=" con-w3l">
+
+                        @{
+                            List<tblProduct> myitem = ItemDB.GetAllSpecialItem();
+                            foreach (var item in myitem)
+                            {
+                                <div class="col-md-3 m-wthree">
+                                    <div class="col-m">
+
+                                        @* <a href="@Url.Action("ViewItem", "Home", new { id = item.ItemId })" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" class="viewitem"><span class="fa fa-search"></span></a>*@
+                                        <a href="@Url.Action("ViewItem", "Home", new { id = item.ProductId })" data-toggle="modal" data-target="#myModal" class="viewitem">
+                                            <img src="~/ProductImages/@item.Photo" class="img-responsive" alt="">
+
+                                        </a>
+                                        <div class="mid-1">
+                                            <div class="women">
+                                                <h6><a href="single.html">@item.ProductName</a></h6>
+                                            </div>
+
+                                            <div class="mid-2">
+
+                                                <p> <b>Price:</b><label>@item.SellingPrice</label></p>
+
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="add">
+                                                <a class="btn btn-danger my-cart-btn" href="@Url.Action("AddToCart","ShoppingCart", new { id = item.ProductId }, "")"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+                        }
+
+
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+ 
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Carousel
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <a href="Snacks.html"> <img class="first-slide" src="images/ba.jpg" alt="First slide"></a>
+
+        </div>
+        <div class="item">
+            <a href="Coocking Essentials.html"> <img class="second-slide " src="images/ba1.jpg" alt="Second slide"></a>
+
+        </div>
+        <div class="item">
+            <a href="hold.html"><img class="third-slide " src="images/ba2.jpg" alt="Third slide"></a>
+
+        </div>
+    </div>
+
+</div>
+<!-- /.carousel -->
+<!--content-->
+<div class="product">
+    <div class="container">
+        <div class="spec ">
+            <h3>Special Offers</h3>
+            <div class="ser-t">
+                <b></b>
+                <span><i></i></span>
+                <b class="line"></b>
+            </div>
+        </div>
+        <div class=" con-w3l">
+
+            @{
+                List<tblProduct> myitemlist = ItemDB.GetAllItems();
+                foreach (var item in myitemlist)
+                {
+                    <div class="col-md-3 pro-1">
+                        <div class="col-m">
+                            <a href="@Url.Action("ViewItem", "Home", new { id = item.ProductId })" data-toggle="modal" data-target="#myModal" class="viewitem">
+                                <img src="~/ProductImages/@item.Photo" class="img-responsive" alt="">
+                            </a>
+                            <div class="mid-1">
+                                <div class="women">
+                                    <h6><a href="single.html">@item.ProductName</a></h6>
+                                </div>
+                                <div class="mid-2">
+                                    <p><label>@item.SellingPrice</label></p>
+
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="add add-2">
+
+                                    <a class="btn btn-danger" href="@Url.Action("AddToCart","ShoppingCart", new { id = item.ProductId }, "")"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            <a class="btn btn-info my-cart-btn" href="@Url.Action("ProductList","Home")">View More</a>
+
+
+
+
+
+           
+
+
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+
